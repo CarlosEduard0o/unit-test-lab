@@ -28,7 +28,6 @@ class TestServiceUser:
         result_expect = "Profissão atualizada com sucesso"
         service = ServiceUser()
 
-        # Primeiro, adicione o usuário para garantir que ele exista.
         service.add_user(name=name_update, job='TechLead')
         
         result = service.update_user(name=name_update, new_job=job_update)
@@ -38,7 +37,6 @@ class TestServiceUser:
     def test_search_user_success(self):
         name_to_search = "Leonardo"
         result_expect = "Profissão: " + "TechLead"
-
         service = ServiceUser()
 
         service.add_user(name=name_to_search, job='TechLead')
@@ -51,7 +49,7 @@ class TestServiceUser:
         name_to_delete = "Leonardo"
         result_expect = "Usuario removido"
         service = ServiceUser()
-
+        
         service.add_user(name=name_to_delete, job='TechLead')
 
         result = service.del_user(name=name_to_delete)
